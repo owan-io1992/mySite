@@ -38,7 +38,7 @@ jobs:
       - name: start build
         run: |
           eval "$(~/.local/bin/mise activate bash)"
-          bun install --backend=symlink
+          bun install
           bun run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
