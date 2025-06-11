@@ -1,8 +1,17 @@
-+++
-date = '2025-06-10T19:11:38+08:00'
-draft = false
-title = 'My First Post'
-+++
+---
+date: 2024-02-02T04:14:54-08:00
+draft: false
+tags:
+- red
+- blue
+title: Example
+weight: 10
+---
+![alt](images/aaa.png "=50x")  
+
+<!--more-->
+
+
 ## Introduction
 
 This is **bold** text, and this is *emphasized* text.
