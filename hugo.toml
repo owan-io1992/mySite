@@ -41,14 +41,14 @@ enableEmoji = true
     name = "Tags"
     url = "/tags/"
     title = ""
-#  [[menu.main]]
-#    weight = 3
-#    identifier = "categories"
-#    pre = ""
-#    post = ""
-#    name = "Categories"
-#    url = "/categories/"
-#    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "about me"
+    pre = ""
+    post = ""
+    name = "about me"
+    url = "/posts/about-me/"
+    title = ""
 
 # Markup related configuration in Hugo
 [markup]
@@ -88,7 +88,7 @@ enableEmoji = true
     [params.home.posts]
       enable = true
       # special amount of posts in each home posts page
-      paginate = 6
+      paginate = 3
   [params.header]
     [params.header.title]
       # URL of the LOGO
