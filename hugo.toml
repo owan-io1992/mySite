@@ -146,7 +146,12 @@ enableEmoji = true
       Skype = false
       Trello = false
       Mix = false
-
+    [params.page.comment]
+      enable = true
+      # Disqus comment config (https://disqus.com/)
+      [params.page.comment.disqus]
+        enable = true
+        shortname = "owans-blog"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
