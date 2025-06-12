@@ -114,3 +114,4 @@ WantedBy=multi-user.target
 
 最後只要 push code 到 main branch  
 觀察看看 action 狀況即可
+![alt text](images/action.png)
