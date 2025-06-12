@@ -47,6 +47,16 @@ k3s 預設就會幫你把 container run-time, cni .... 一併處理好
 詳細包了什麼  可以參考 release note
 ![](images/release_note.png)
 
-當中有些元件是可以更換的
+當中有些元件是可以更換的, 根據需求還是進行調整  
 - container-runtime: https://docs.k3s.io/advanced#alternative-container-runtime-support
-- cni
+- CNI: https://docs.k3s.io/networking/basic-network-options#custom-cni  
+- Volumes and Storage: https://docs.k3s.io/storage#setting-up-longhorn
+
+## getting start
+
+就這樣
+```
+curl -sfL https://get.k3s.io | sh -
+```
+
+下一篇 再來說說更進階的使用方法
