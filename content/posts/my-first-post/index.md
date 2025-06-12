@@ -5,9 +5,8 @@ tags:
 - red
 - blue
 title: Example
-weight: 10
 ---
-![alt](images/aaa.png "=50x")  
+![alt](images/aaa.png)  
 
 <!--more-->
 

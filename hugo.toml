@@ -56,6 +56,10 @@ enableEmoji = true
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2
 
 [params]
   # site default theme ["auto", "light", "dark"]
@@ -152,6 +156,12 @@ enableEmoji = true
       [params.page.comment.disqus]
         enable = true
         shortname = "owans-blog"
-
+    [params.page.toc]
+      # whether to enable the table of the contents
+      enable = true
+      # whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = false
 [outputs]
   home = ["HTML", "RSS", "JSON"]
