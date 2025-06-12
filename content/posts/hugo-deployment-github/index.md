@@ -81,13 +81,33 @@ WantedBy=multi-user.target
 
 ### setup repo
 因為採用 cicd 方式  
-我們的 repo 不須保留 public folder (generate by hugo)  
-此 folder 為最後 hugo 產生的 static content  
+我們的 repo 不保留 public folder (generate by hugo)  
+此 folder 為最後 hugo 產生的 static content, 這個要交由 github runner 產生  
 
-在 .gitignore 加上 `public/`  
-
+在 .gitignore 加上 `public/`  解決
+[.gitignore](https://github.com/owan-io1992/blog/blob/main/.gitignore)
 
 
 ### setup github workflow
+在這一步我們要告訴 gitlab runner 要做什麼  
+請參考 [workflow](https://github.com/owan-io1992/blog/blob/main/.github/workflows/hugo-gh-pages.yml)
+
+簡單來說就是
+- checkout main branch (github page limit)
+- hugo build static file
+- upload artifact
+- deploy artifact to page
+
 ### setup page
+再接下來要開啟 page 功能  
+到 settings/pages  
+設定 source 為 githab action 
+![](images/page.png)
+
+
+這邊建議再申請一個 free dns 設定 Custom domain  
+因為 page default 會給 `<username>.github.io/<repo name>`  
+在 uri 部份會有個 repo name 為 prefix  
+在部份 search engine 最佳化會碰上些問題(之後再細說)
+
 ### push code
