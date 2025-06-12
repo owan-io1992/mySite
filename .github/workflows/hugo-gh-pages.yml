@@ -1,5 +1,4 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy docusaurus with GitHub Pages dependencies preinstalled
+name: Deploy hugo static contect to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch

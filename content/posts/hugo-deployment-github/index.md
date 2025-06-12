@@ -111,3 +111,6 @@ WantedBy=multi-user.target
 在部份 search engine 最佳化會碰上些問題(之後再細說)
 
 ### push code
+
+最後只要 push code 到 main branch  
+觀察看看 action 狀況即可
