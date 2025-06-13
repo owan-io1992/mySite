@@ -11,7 +11,7 @@ title: k8s distribution compare
 
 Kubernetes 作為一個 container orchestration  是一個非常強大的平台  
 但因為設計因素,造成他在安裝就有一定程度的麻煩  
-也許因此原因, 跟 linux 有各種 distribution 的出現   
+也許因此原因, 跟 linux 一樣有各種 distribution 的出現   
 
 這邊快速探討下幾個 distribution  
 
@@ -78,5 +78,5 @@ k8s 安裝一個 node 可能 10mins 起跳
 
 而 Minikube 這種使用 docker 模擬的  
 除了效率不佳外, 也因為其 network 會被 docker 包一層(overlap)  
-所以一些 k8s 的行為會不一樣,個人非常不建議使用  
+導致一些 k8s 網路相關的行為會不一樣,個人非常不建議使用  
 

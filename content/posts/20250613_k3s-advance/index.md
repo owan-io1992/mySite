@@ -3,7 +3,7 @@ date: 2025-06-13T00:00:00
 draft: false
 tags:
 - k3s
-title: k3s advance
+title: k3s install advance 1 
 ---
 ![alt](images/banner.png)
 
