@@ -21,12 +21,12 @@ vagrant 是一個工具幫助管裡 virtual machines
 vagrant deafult 使用 virtualbox 作為 providers(執行 VM 的 hypervisor)  
 雖然也支援 hyper-v/vmware 不過因為設定多少有不同的部份 相容性也是問題  
 個人是建議就乖乖使用 virtualbox 避免不必要的踩雷  
-[providers](https://developer.hashicorp.com/vagrant/docs/providers/default)
+[providers](https://developer.hashicorp.com/vagrant/docs/providers/default)  
 
 ## getting start
-1. install [vagrant](https://developer.hashicorp.com/vagrant/downloads)
-2. install [virtualbox](https://www.virtualbox.org)
-3. crate a Vagrantfile
+1. install [vagrant](https://developer.hashicorp.com/vagrant/downloads)  
+2. install [virtualbox](https://www.virtualbox.org)  
+3. crate a Vagrantfile  
 
 ```bash
 Vagrant.configure("2") do |config|
@@ -76,8 +76,8 @@ vagrant 讓你可以建立多台 VM
 
 ## sample
 
-經過以上改善
-成品如下
+經過以上改善  
+成品如下  
 
 ```bash
 # -*- mode: ruby -*-
