@@ -123,6 +123,14 @@ global_defs {
   enable_script_security
   script_user root
 }
+vrrp_script chk_kube-api-server {
+    # check port 6443 is listening
+    script "lsof -i :6443"
+    interval 2          # 每 2 秒執行一次檢查
+    fall 2              # 連續失敗 2 次後才觸發降級
+    rise 1              # 連續成功 1 次後恢復正常優先級
+    init_fail
+}
 
 vrrp_instance haproxy-vip {
     interface enp0s8 # 請根據您的實際網路介面名稱修改
@@ -133,11 +141,14 @@ vrrp_instance haproxy-vip {
     virtual_ipaddress {
         192.168.56.100/24 # 設定虛擬 IP 地址和子網路遮罩
     }
+    track_script {
+        chk_kube-api-server
+    }
 }
 EOF
 ```
-**配置說明**:
-*   `global_defs`: 全局配置，`enable_script_security` 和 `script_user root` 確保腳本可以以 root 權限執行。
+**設定說明**:
+*   `global_defs`: 全局設定，`enable_script_security` 和 `script_user root` 確保腳本可以以 root 權限執行。
 *   `vrrp_instance haproxy-vip`: 定義一個 VRRP 實例。
     *   `interface`: 監聽 VRRP 廣播的網路介面。
     *   `state`: 節點的初始狀態。在多個節點中，優先級最高的節點將成為 `MASTER`。
@@ -184,7 +195,7 @@ ubuntu@node1:~$ ip a show dev enp0s8
     ```bash
     # 在第二個和第三個伺服器節點上執行 (e.g., node2, node3)
     export INSTALL_K3S_VERSION=v1.32.5+k3s1
-    export INSTALL_K3S_EXEC="server --disable=traefik --write-kubeconfig-mode 644 --server https://192.168.56.101:6443 --tls-san=192.168.56.100"
+    export INSTALL_K3S_EXEC="server --disable=traefik --write-kubeconfig-mode 644 --server https://192.168.56.100:6443 --tls-san=192.168.56.100"
     export K3S_TOKEN=<從第一個伺服器節點獲取的令牌>
     curl -sfL https://get.k3s.io | sh -s -
     ```
