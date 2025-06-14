@@ -81,14 +81,14 @@ Longhorn 是一個輕量級、可靠且易於使用的 Kubernetes 分佈式區�
 ### step
 
 1. 利用之前的 vagrant 起 4 個 node [vagrant-introduction](https://blog.owanio1992.cloudns.nz/posts/20250612_vagrant-introduction/)  
-2. 設定 [keepalived](https://blog.owanio1992.cloudns.nz/posts/20250613_k3s-install-advance-1/#1-%E5%AE%89%E8%A3%9D-keepalived)  
-3. Enabling Registry Mirroring
+2. 設定 [keepalived](https://blog.owanio1992.cloudns.nz/posts/20250613_k3s-install-advance-1/#1-%E5%AE%89%E8%A3%9D-keepalived)   
+3. Enabling Registry Mirroring  
 https://docs.k3s.io/installation/registry-mirror#enabling-registry-mirroring
 
 這功能將每個 k3s node 成為 mirror registry  
-藉此節省 pull image 所需的 bandwidth 
-in each node 
-```
+藉此節省 pull image 所需的 bandwidth  
+in each node config  
+```bash
 sudo mkdir -p /etc/rancher/k3s/
 sudo tee /etc/rancher/k3s/registries.yaml <<EOF
 mirrors:
@@ -122,7 +122,7 @@ scp cilium 192.168.56.101:/tmp
 
 4. install first server node  
 因為我們要改用 cilium 參數所以配合調整參數  
-https://docs.cilium.io/en/latest/installation/k3s/
+https://docs.cilium.io/en/latest/installation/k3s/  
 ```bash
 # 在第一個伺服器節點上執行 (e.g., node1)
 sudo cp /tmp/k3s /usr/local/bin/k3s
@@ -177,7 +177,7 @@ Conditions:
 
 
 6. install cilium  
-[doc](https://docs.cilium.io/en/stable/installation/k3s/)
+[doc](https://docs.cilium.io/en/stable/installation/k3s/)  
 
 ```bash
 # install CNI
