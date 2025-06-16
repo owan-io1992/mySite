@@ -80,8 +80,8 @@ Longhorn 是一個輕量級、可靠且易於使用的 Kubernetes 分佈式區�
 
 ### step
 
-1. 利用之前的 vagrant 起 4 個 node [vagrant-introduction](https://blog.owanio1992.cloudns.nz/posts/20250612_vagrant-introduction/)  
-2. 設定 [keepalived](https://blog.owanio1992.cloudns.nz/posts/20250613_k3s-install-advance-1/#1-%E5%AE%89%E8%A3%9D-keepalived)   
+1. 利用之前的 vagrant 起 4 個 node [vagrant-introduction](/posts/20250612_vagrant-introduction/)  
+2. 設定 [keepalived](/posts/20250613_k3s-install-advance-1/#1-%E5%AE%89%E8%A3%9D-keepalived)   
 3. Enabling Registry Mirroring  
 https://docs.k3s.io/installation/registry-mirror#enabling-registry-mirroring
 
@@ -245,7 +245,7 @@ export K3S_TOKEN=<從第一個伺服器節點獲取的令牌>
 curl -sfL https://get.k3s.io | sh -s -
 ```
 
-7. install agent node  
+11. install agent node  
 ```bash
 sudo cp /tmp/k3s /usr/local/bin/k3s
 
