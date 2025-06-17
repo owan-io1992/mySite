@@ -135,6 +135,9 @@ web, app 反應快上不少
   讓系統不受限制
 - On-Call Schedules
   最重要的  就是排班機制  
+  他能夠設定多個 Schedules  
+  我們設定了 primary & backup  
+  如果 primary 意外沒收到 alert, backup 可以處理 
 - Schedule Overrides
   如果 on-call member 有事 能夠 Overrides schedules 讓其他 member 暫時 on-call  
   而不需要重新調整排班  
@@ -151,17 +154,21 @@ graph LR;
   而不用修改 Schedule
 
 - Escalation Policies
-  因為 squadcast 收到 alert 時會有幾個階段 initial ack -> resolve 
+  因為 squadcast 收到 alert 時會有幾個階段 
 {{< mermaid >}}
 graph LR;
     initial[send alert]
     ack[on-call member acknowledge]
-    ack[on-call member acknowledge]
-     --> B --> C --> D
-    D --> A
+    resolve[on-call member resolve alert]
+    initial --> ack --> resolve
 {{< /mermaid >}}
+  
+  前面提到 Schedules 有 primary/backup  
+  如果 primary member 沒接到 alert  
+  這裡可以設定時間經過 N 後沒有人 acknowledge 的話  
+  就通知 backup member  
 
-
+  
 - Mobile App (Android & iOS)
   他們有自己的 APP  
   APP 有

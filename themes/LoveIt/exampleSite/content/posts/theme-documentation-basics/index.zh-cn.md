@@ -71,11 +71,11 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 {{< admonition note "主题的兼容性" >}}
 
-| 分支或版本 | 支持的 Hugo 版本 |
-|:---- |:----:|
-| master(不稳定) | ≥ 0.128.0 |
-| **0.3.X(推荐)** | 0.128.0 - 0.143.1 |
-| 0.2.X(过时) | 0.68.0 - 0.127.0 |
+| LoveIt 分支或版本  |    支持的 Hugo 版本    |
+|:--------------|:-----------------:|
+| master(不稳定)   |     ≥ 0.128.0     |
+| **0.3.X(推荐)** | 0.128.0 - 0.145.0 |
+| 0.2.X(过时)     | 0.68.0 - 0.127.0  |
 
 {{< /admonition >}}
 
@@ -418,7 +418,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [params.social]
     GitHub = "xxxx"
     Linkedin = ""
-    Twitter = "xxxx"
+    X = "xxxx" # {{< version 0.3.1 >}}
+    Twitter = "" # {{< version 0.3.1 deprecated >}}
     Instagram = "xxxx"
     Facebook = "xxxx"
     Telegram = "xxxx"
@@ -484,14 +485,16 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     ORCID = ""
     Pleroma = ""
     Kaggle = ""
-    MediaWiki= ""
+    MediaWiki = ""
     Plume = ""
     HackTheBox = ""
-    RootMe= ""
-    Malt = ""
-    TikTok = ""
-    TryHackMe = ""
-    Codeberg = ""
+    RootMe = ""
+    Malt = "" # {{< version 0.3.0 >}}
+    TikTok = "" # {{< version 0.3.0 >}}
+    TryHackMe = "" # {{< version 0.3.0 >}}
+    Codeberg = "" # {{< version 0.3.0 >}}
+    HuggingFace = "" # {{< version 0.3.1 >}}
+    Threads = "" # {{< version 0.3.1 >}}
     Phone = ""
     Email = "xxxx@xxxx.com"
     RSS = true # {{< version 0.2.0 >}}
@@ -562,7 +565,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # {{< version 0.2.0 changed >}} 文章页面的分享信息设置
     [params.page.share]
       enable = true
-      Twitter = true
+      X = true # {{< version 0.3.1 >}}
+      Twitter = false # {{< version 0.3.1 deprecated >}}
+      Threads = true # {{< version 0.3.1 >}}
       Facebook = true
       Linkedin = false
       Whatsapp = false
@@ -584,7 +589,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       Evernote = false
       Skype = false
       Trello = false
+      Diaspora = true # {{< version 0.3.1 >}}
       Mix = false
+      Telegram = true # {{< version 0.3.1 >}}
     # {{< version 0.2.0 changed >}} 评论系统设置
     [params.page.comment]
       enable = false
@@ -720,12 +727,15 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # {{< version 0.2.0 >}} 网站分析配置
   [params.analytics]
-    enable = false
+    # {{< version 0.3.1 deleted >}}
+    enable = true
     # Google Analytics
     [params.analytics.google]
       id = ""
-      # 是否匿名化用户 IP
+      # {{< version 0.3.1 deleted >}} 是否匿名化用户 IP
       anonymizeIP = true
+      # {{< version 0.3.1 >}} 是否遵循浏览器的 “Do Not Track” 设置
+      respectDoNotTrack = false
     # Fathom Analytics
     [params.analytics.fathom]
       id = ""
@@ -805,13 +815,13 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # {{< link "https://gohugo.io/about/hugo-and-gdpr/" "隐私信息配置" >}}
 [privacy]
-  # {{< version 0.2.0 deleted >}} Google Analytics 相关隐私 (被 params.analytics.google 替代)
+  # {{< version 0.3.1 changed >}} Google Analytics 相关隐私设置 (也能在 params.analytics.google 配置)
   [privacy.googleAnalytics]
     # ...
   [privacy.twitter]
-    enableDNT = true
+    # ...
   [privacy.youtube]
-    privacyEnhanced = true
+    # ...
 
 # 用于输出 Markdown 格式文档的设置
 [mediaTypes]
@@ -831,7 +841,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
 ```
 
 {{< admonition >}}
@@ -943,30 +952,31 @@ $code-font-family: Fira Mono, Source Code Pro, Menlo, Consolas, Monaco, monospac
 
 {{< version 0.2.10 changed >}}
 
-| 语言 | Hugo 代码 | HTML `lang` 属性 | 主题文档 | Lunr.js 支持 |
-|:---- |:----:|:----:|:----:|:----:|
-| 英语 | `en` | `en` | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| 简体中文 | `zh-cn` | `zh-CN` | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| 繁体中文 | `zh-tw` | `zh-TW` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 法语 | `fr` | `fr` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 波兰语 | `pl` | `pl` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 葡萄牙语(巴西) | `pt-br` | `pt-BR` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 意大利语 | `it` | `it` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 西班牙语 | `es` | `es` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 德语 | `de` | `de` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 塞尔维亚语 | `pl` | `pl` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 俄语 | `ru` | `ru` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 罗马尼亚语 | `ro` | `ro` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 越南语 | `vi` | `vi` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 阿拉伯语 | `ar` | `ar` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 加泰罗尼亚语 | `ca` | `ca` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 泰语 | `th` | `th` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 泰卢固语 | `te` | `te` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 印尼语 | `id` | `id` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 土耳其语 | `tr` | `tr` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
-| 韩语 | `ko` | `ko` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 印地语 | `hi` | `hi` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
-| 荷兰语 | `nl` | `nl` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
+| 语言       | Hugo 代码 | HTML `lang` 属性 |             主题文档              |          Lunr.js 支持           |
+|:---------|:-------:|:--------------:|:-----------------------------:|:-----------------------------:|
+| 英语       |  `en`   |      `en`      | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
+| 简体中文     | `zh-cn` |    `zh-CN`     | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
+| 繁体中文     | `zh-tw` |    `zh-TW`     |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 法语       |  `fr`   |      `fr`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 波兰语      |  `pl`   |      `pl`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 葡萄牙语(巴西) | `pt-br` |    `pt-BR`     |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 意大利语     |  `it`   |      `it`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 西班牙语     |  `es`   |      `es`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 德语       |  `de`   |      `de`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 塞尔维亚语    |  `pl`   |      `pl`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 俄语       |  `ru`   |      `ru`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 罗马尼亚语    |  `ro`   |      `ro`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 越南语      |  `vi`   |      `vi`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 阿拉伯语     |  `ar`   |      `ar`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 加泰罗尼亚语   |  `ca`   |      `ca`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 泰语       |  `th`   |      `th`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 泰卢固语     |  `te`   |      `te`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 印尼语      |  `id`   |      `id`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 土耳其语     |  `tr`   |      `tr`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 韩语       |  `ko`   |      `ko`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 印地语      |  `hi`   |      `hi`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
+| 荷兰语      |  `nl`   |      `nl`      |    :(far fa-square fa-fw):    | :(far fa-check-square fa-fw): |
+| 孟加拉语     |  `bn`   |      `bn`      |    :(far fa-square fa-fw):    |    :(far fa-square fa-fw):    |
 
 ### 4.2 基本配置
 

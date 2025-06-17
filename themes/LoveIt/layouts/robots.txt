@@ -61,7 +61,6 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: {{ "sitemap.xml" | absLangURL }}
+Sitemap: {{ "/sitemap.xml" | absLangURL }}
 
 # Algolia-Crawler-Verif: 953C594DAA052ACA
-

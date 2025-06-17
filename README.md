@@ -37,3 +37,7 @@ hugo
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 
+# upgrade theme 
+
+update folder `themes/LoveIt`  
+copy `themes/LoveIt/layouts/robots.txt` "Algolia-Crawler-Verif" to new robots.txt  
