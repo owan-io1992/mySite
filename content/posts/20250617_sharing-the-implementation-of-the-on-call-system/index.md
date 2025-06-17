@@ -98,8 +98,8 @@ web, app 反應稍慢
 * [xmatters](https://www.xmatters.com)  
 free tier 10 users  
 region 有亞太 (反應比較快)  
-Outbound Integration https://zyxel-nebula.xmatters.com/xmatters/signOn.do 很現代  
-需要時間學習  
+Outbound Integration 很現代感  
+有點小複雜,需要時間學習  
 
 * [squadcast](https://www.squadcast.com)  
 free tier 5 users  
@@ -162,26 +162,44 @@ graph LR;
     initial --> ack --> resolve  
 {{< /mermaid >}}  
   
-  前面提到 Schedules 有 primary/backup  
+  前面提到 Schedules 我們設定了 primary/backup  
   如果 primary member 沒接到 alert  
-  這裡可以設定時間經過 N 後沒有人 acknowledge 的話  
-  就通知 backup member  
+  這裡可以設定時間經過 N 分鐘後, 如果沒有人 acknowledge 的話  
+  就通知 backup member   
+  這也是當初要找 on-call system 最想要的功能  
 
 - Alert Deduplication  
   當 alert 發生時 相關的 service 受影響的話可能也會發 alert  
   Dedup 可以避免 oncall member 一直收到 notify 而無法專心處理 alert  
 
 - API Request Unlimited Limits  
-  避免 alert 送不出來  
+  如果有 limit 的話會擔心 alert 送不出來  
+  這點也是加分
+
 - Mobile App (Android & iOS)  
   他們有自己的 APP  
   APP 能夠設定 "Bypass Do Not Disturb"  
   避免因手機設定沒收到 alert  
   其效果就像國家警報系統  極盡可能讓你避免 alert 未收到  
+  幾乎可以直接取代 phone-call  
+
 - 能夠整合 Slack  
+  
 - 能夠設定多個 Services  
   不同 service 會有不同的 on-call member  
   也能接各自的 alert source & target (比如說不同 slack channel)  
 
 - MTTA / MTTR Performance Report & User and Incident Based Analytics & Organization and Team Based Analytics  
   老闆最愛看
+
+
+---
+
+以上就是我們嘗試導入 on-call system 的原因  
+另外 squadcast 不只功能符合我們需求  
+其速度也很優  
+app notify 會比 phone call 還快  
+這點個人超驚訝  
+  
+最後再次強調  這不是業配 單純導入心得分享  
+請大家再根據 team 需求選擇對應的系統  
