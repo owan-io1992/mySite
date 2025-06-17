@@ -65,11 +65,13 @@ docker 偏向小型環境
 
 ### beginner 
 這個類別是建議所有人都該學會 k8s 的知識  
+原文可會講的太過深入, 我認為不必了解的東西我就不會做說明  
 
 - [Concepts - Overview](/posts/20250616_k8s-doc-reading-concepts-overview/)
-- [Concepts - Overview: Kubernetes Components](/posts/20250616_k8s-doc-reading-concepts-cluster-architecture/)
-- Concepts - Cluster Architecture
-- Concepts - Cluster Architecture: Node 
+- [Concepts - Cluster Architecture](/posts/20250616_k8s-doc-reading-concepts-cluster-architecture/)
+- [Concepts - Cluster Architecture: Node](/posts/20250617_k8s-doc-reading-concepts-cluster-architecture-node/)
+
+
 - Concepts - Cluster Architecture: Communication between Nodes and the Control Plane  
 - Concepts - Workloads
 - Concepts - Workloads - Pods
