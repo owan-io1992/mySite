@@ -47,7 +47,7 @@ enableEmoji = true
     pre = ""
     post = ""
     name = "about me"
-    url = "/posts/about-me/"
+    url = "/posts/19920711_about-me/"
     title = ""
 
 # Markup related configuration in Hugo
