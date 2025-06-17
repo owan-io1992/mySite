@@ -19,7 +19,7 @@ title: "k8s doc reading: Concepts: Cluster Architecture"
 - Control plane: 負責執行 k8s cluster 管理元件  
   一般來說一個 production ready cluster 會準備 3 個 Control plane node (HA)  
   預設不會執行 k8s 本身以外的 container  
-- worker: 執行我們 user workloads container
+- worker: 執行我們 user workloads (container)
 
 ![](images/architecture1.png)
 
@@ -143,11 +143,16 @@ k8s 沒有 implement
 k8s 跟 docker 不同的是 
 docker 不需要額外設定, contianer 就有網路功能  
 
-k8s 必須再額外安裝 CNI 才行  
-不過因此 CNI 會有五花八門的選擇  
-各自有各自的好壞  
-後面會再介紹  
+k8s 必須再額外安裝 CNI 才能運作  
+而 CNI 會有琳瑯滿目的選擇  
+這邊可以看到官方已列出的 project  [networking-and-network-policy](https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy)
 
+不同的 CNI 不只 implement 方式不同  
+feature 也會不同  
+比如說有沒有 VPN or firewall 的功能  
+
+不同的 CNI 各自有各自的好壞  
+後面會再介紹  
 
 ## Architecture variations 
 簡單來說 k8s 的安裝其實可以根據需求產生變化  
