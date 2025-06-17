@@ -17,8 +17,8 @@ title: "k8s doc reading: Concepts: Cluster Architecture"
 會先把 node 分成兩大 node group
 
 - Control plane: 負責執行 k8s cluster 管理元件  
-  一般來說一個 production ready cluster 會準備 3 個 Control plane node
-  預設不會執行 k8s 本身以外的 container
+  一般來說一個 production ready cluster 會準備 3 個 Control plane node (HA)  
+  預設不會執行 k8s 本身以外的 container  
 - worker: 執行我們 user workloads container
 
 ![](images/architecture1.png)
@@ -173,3 +173,57 @@ Control plane components are deployed as static Pods, managed by the kubelet on 
 Static Pods 則是跳過 scheduler, kubelet 直接啟動  
 通常都是執行系統 component  
 我們一般不會使用 Static Pods  
+
+### Self-hosted
+The control plane runs as Pods within the Kubernetes cluster itself, managed by Deployments and StatefulSets or other Kubernetes primitives.
+
+把 control plane 執行在 k8s 自身  
+算進階玩法  
+有興趣可以嘗試
+
+### Managed Kubernetes services
+Cloud providers often abstract away the control plane, managing its components as part of their service offering.
+
+簡單來說就是 Cloud providers 基本上不會讓你有管理 control plane 的能力 (都是他們代管)  
+
+## Workload placement considerations 
+
+The placement of workloads, including the control plane components, can vary based on cluster size, performance requirements, and operational policies:  
+
+k8s 架構是可以根據需求調整的
+
+* In smaller or development clusters, control plane components and user workloads might run on the same nodes.
+在小型開發環境可以只有一個 control plane node (沒有 HA)
+並 allow 執行 user workloads
+用 single node 執行開 k8s   
+
+
+* Larger production clusters often dedicate specific nodes to control plane components, separating them from user workloads.
+在正式環境
+請分開 control plane, workload (通常可能 3 control plane node + 3 work node)  
+不過 k3s 預設不這樣設計  都是看需求   
+
+* Some organizations run critical add-ons or monitoring tools on control plane nodes.
+雖然不讓 control plane 執行 user workloads  
+但是允許讓 monitor 類的 workloads 在 control plane node 執行  
+當然是用來 monitor control plane 了   
+這邊會讓各位先知道  可以根據設定 
+讓部份 workload 不能在 control plane node 執行  
+讓部份 workload 可以在 control plane node 執行  
+
+## Cluster management tools 
+
+社群中有很多 cluster 管理工具  
+這後面再找個篇幅介紹  
+
+## Customization and extensibility 
+Kubernetes architecture allows for significant customization:
+
+* Custom schedulers can be deployed to work alongside the default Kubernetes scheduler or to replace it entirely.
+* API servers can be extended with CustomResourceDefinitions and API Aggregation.
+* Cloud providers can integrate deeply with Kubernetes using the cloud-controller-manager.
+The flexibility of Kubernetes architecture allows organizations to tailor their clusters to specific needs, balancing factors such as operational complexity, performance, and management overhead.
+
+基本上就是再次強調  
+k8s 的彈性
+因此造就他的強大  
