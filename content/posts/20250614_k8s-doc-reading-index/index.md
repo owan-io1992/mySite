@@ -71,9 +71,9 @@ docker 偏向小型環境
 - [Concepts - Cluster Architecture](/posts/20250616_k8s-doc-reading-concepts-cluster-architecture/)
 - [Concepts - Cluster Architecture: Node](/posts/20250617_k8s-doc-reading-concepts-cluster-architecture-node/)
 - [Concepts - Workloads](/posts/20250617_k8s-doc-reading-concepts-workloads/)
+- [Getting started](/posts/20250618_k8s-doc-reading-getting-started/)
 
 
-- Concepts - Workloads - Pods
 - Concepts - Workloads: Managing Workloads
 - Concepts - Services, Load Balancing, and Networking
 - Concepts - Services, Load Balancing, and Networking: Service
@@ -106,6 +106,7 @@ docker 偏向小型環境
 
 ### intermediate
 - Concepts - Workloads: Autoscaling Workloads
+- Concepts - Workloads - Pods
 - Concepts - Workloads - Pods: Pod Lifecycle
 - Concepts - Workloads - Pods: Init Containers ?? Concepts - Containers - Container Lifecycle Hooks
 - Concepts - Workloads - Pods: Sidecar Containers
