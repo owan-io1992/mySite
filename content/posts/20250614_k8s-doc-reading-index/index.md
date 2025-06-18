@@ -70,10 +70,9 @@ docker 偏向小型環境
 - [Concepts - Overview](/posts/20250616_k8s-doc-reading-concepts-overview/)
 - [Concepts - Cluster Architecture](/posts/20250616_k8s-doc-reading-concepts-cluster-architecture/)
 - [Concepts - Cluster Architecture: Node](/posts/20250617_k8s-doc-reading-concepts-cluster-architecture-node/)
+- [Concepts - Workloads](/posts/20250617_k8s-doc-reading-concepts-workloads/)
 
 
-- Concepts - Cluster Architecture: Communication between Nodes and the Control Plane  
-- Concepts - Workloads
 - Concepts - Workloads - Pods
 - Concepts - Workloads: Managing Workloads
 - Concepts - Services, Load Balancing, and Networking
