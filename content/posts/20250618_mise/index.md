@@ -11,8 +11,6 @@ title: "developer 神器 runtime manager: mise"
 <!--more-->
 
 ## Introduction
-Prologue
-conclusion
 對於開發者而言  
 在開發的第一步是要先把 runtime 裝起來  
 比如說 python/golang/node.js ...  
