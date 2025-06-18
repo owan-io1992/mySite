@@ -82,7 +82,7 @@ mise ls-remote --all | grep python
 嘗試安裝 python 3.13.5 在 global  
 亦即不管你在哪個 workdirectory 都是使用此版本  
 mise 會將設定寫在 `~/.config/mise/config.toml`  
-除了用 mise 去指定外, 直機編輯 toml 也是可以的  
+除了用 mise 去指定外, 直接編輯 toml 也是可以的  
 
 ```bash
 mise use --global python@3.13.5
@@ -121,7 +121,7 @@ mise 會自動 lookup top directory 的 mise.toml
 
 ### install runtime from mise.toml
 
-因為 `mise.toml` 放在 git repo 中 root 下  
+如果把 `mise.toml` 放在 git repo 中的 root 位置  
 就等於宣告該 repo 要使用的 runtime 版本  
 因此只要把 `mise.toml` commit 到 git 內  
 在 team member 之間要確保版本一致就相當簡單  
@@ -137,10 +137,11 @@ mise install # this is option
 
 ## Conclusion
 對於 developer/operator/devops/sre 而言  
-mise 是非常強大的工具  
+mise 是非常方便的工具  
 關於 envrironments and tasks 就讓大家自行挖掘如何使用  
 如果你跟我一樣之前是 asdf, 那換到 mise 一定是非常舒服的事情  
-畢竟他的目標就是取代 asdf  
+因為他的目標就是取代 asdf  
+他比 asdf 容易使用且更加的強大  
 
 let's happy developing  
 
