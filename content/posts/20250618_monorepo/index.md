@@ -45,9 +45,9 @@ monorepo 的由來是在大型 project 中 source code 的存放方式的改進�
 不過 Monorepo 也不是簡單把 project/library 通通丟到一個 git repo 而已  
 當 source code 越來越大  
 我們要做微服務那就需要人幫忙管理 project/library 之間的關係  
-如果全包 就又回到 monolithic 了  
+如果每次 release 都是所有 source code 全包 就又回到 monolithic 了  
 
-現今很多 runtime manager 也直接支援 monorepo 的概念  
+> 現今很多 runtime manager 也直接支援 monorepo 的概念  
 比如 golang 的 [Workspaces](https://go.dev/ref/mod#workspaces)   
 
 就算 runtime manager 有支援 monorepo 的概念  
@@ -56,7 +56,7 @@ monorepo 的由來是在大型 project 中 source code 的存放方式的改進�
 而不是對異動的 project/library  
 那顯然很沒效率  
 
-因此導入 monorepo 接著要解決的是相依性(dependencies) and 效率(performance)  
+因此導入 monorepo 接著要解決的是 dependencies(相依性) and performance(效率) 問題  
 
 後面篇幅會以 python 為例, 介紹兩款 tool `uv`, `moon`  
 
