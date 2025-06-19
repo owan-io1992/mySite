@@ -41,3 +41,11 @@ This command generates static content into the `build` directory and can be serv
 
 update folder `themes/LoveIt`  
 copy `themes/LoveIt/layouts/robots.txt` "Algolia-Crawler-Verif" to new robots.txt  
+
+# mermaid icon 
+
+use CDN by https://www.jsdelivr.com  
+icons from https://icones.js.org/  
+
+update file `themes/LoveIt/layouts/baseof.html:67` 
+
