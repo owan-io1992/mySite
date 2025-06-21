@@ -74,7 +74,8 @@ docker 偏向小型環境
 - [Getting started](/posts/20250618_k8s-doc-reading-getting-started/)
 
 
-- Concepts - Workloads: Managing Workloads
+- Concepts - Workloads: Workload Management - deployments
+
 - Concepts - Services, Load Balancing, and Networking
 - Concepts - Services, Load Balancing, and Networking: Service
 - Concepts - Services, Load Balancing, and Networking: Ingress,Ingress Controllers

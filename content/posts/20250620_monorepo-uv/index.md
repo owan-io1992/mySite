@@ -71,7 +71,7 @@ mise 就是一個 runtime manager
 同時確保它們之間的相容性
 
 
-以下是一個使用 Mermaid 繪製的 monorepo 結構圖，展示了 `uv` 如何管理不同專案的依賴：
+monorepo 架構圖：
   
 {{< mermaid >}}  
 ---
