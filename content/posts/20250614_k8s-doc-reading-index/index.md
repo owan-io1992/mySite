@@ -72,9 +72,11 @@ docker 偏向小型環境
 - [Concepts - Cluster Architecture: Node](/posts/20250617_k8s-doc-reading-concepts-cluster-architecture-node/)
 - [Concepts - Workloads](/posts/20250617_k8s-doc-reading-concepts-workloads/)
 - [Getting started](/posts/20250618_k8s-doc-reading-getting-started/)
-
-
-- Concepts - Workloads: Workload Management - deployments
+- [Concepts - Workloads: Workload Management - deployments](/posts/20250620_workload-management-deployments/)
+- [Concepts - Workloads: Workload Management - statefulsets]()
+- [Concepts - Workloads: Workload Management - DaemonSet]()
+- [Concepts - Workloads: Workload Management - CronJob]()
+- [Concepts - Workloads: Workload Management - Autoscaling Workloads]()
 
 - Concepts - Services, Load Balancing, and Networking
 - Concepts - Services, Load Balancing, and Networking: Service
