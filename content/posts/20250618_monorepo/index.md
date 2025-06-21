@@ -19,7 +19,7 @@ monorepo 的由來是在大型 project 中 source code 的存放方式的改進�
 因為太"大"了  
 且不利於做微服務  
 
-**Multi-repo:**  
+**Multi-repo(Polyrepo):**  
 因為 Monolithic 不易於維護及微服務化  
 就將 feature 拆成小 project/library 並存在各自的 repo 中  
 可是這樣很快就面臨挑戰  
